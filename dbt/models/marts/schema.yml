@@ -1,0 +1,33 @@
+version: 2
+
+models:
+  - name: fct_user_metrics
+    description: >
+      One row per assigned user — the unit of analysis. Aggregating to the randomised unit here is
+      what lets the experiment estimators compute an honest standard error; handing them sessions
+      instead understates it, which the replication study in pae/experiment/validate.py measures.
+    columns:
+      - name: user_id
+        data_tests: [unique, not_null]
+      - name: variant
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [control, treatment]
+      - name: sessions
+        description: Experiment-period session count. Non-negative; asserted by a singular test.
+      - name: revenue
+        description: Experiment-period revenue. Never negative.
+
+  - name: mart_funnel
+    description: Funnel conversion by variant, with both step-to-step and from-the-top rates.
+    columns:
+      - name: step_conversion
+        description: Share of the previous step that reached this one. Null at the top of the funnel.
+
+  - name: mart_retention
+    description: Weekly cohort retention. Denominator is the whole cohort, not the active subset.
+
+  - name: mart_experiment_daily
+    description: Cumulative metrics by day and variant — the curve a team watches while a test runs.

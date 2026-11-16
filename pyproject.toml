@@ -1,0 +1,18 @@
+[project]
+name = "product-analytics-experiments"
+version = "0.1.0"
+description = "A product-analytics warehouse and an experiment-analysis library that checks itself against known ground truth"
+requires-python = ">=3.11"
+readme = "README.md"
+license = { text = "MIT" }
+dependencies = ["numpy>=1.26", "pandas>=2.1", "scipy>=1.11", "duckdb>=1.0"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "dbt-core>=1.8", "dbt-duckdb>=1.8"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q --strict-markers"
+
+[tool.setuptools]
+packages = ["pae", "pae.experiment"]

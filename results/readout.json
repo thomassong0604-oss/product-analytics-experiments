@@ -1,0 +1,81 @@
+{
+  "experiment": "checkout_redesign",
+  "users": {
+    "control": 59899,
+    "treatment": 60101
+  },
+  "sessions": {
+    "control": 409716,
+    "treatment": 409813
+  },
+  "purchases per session (clustered on user)": {
+    "relative": 0.1431450633608755,
+    "rel_low": 0.11644022916857533,
+    "rel_high": 0.17048866723435174,
+    "absolute": 0.006701736337825011,
+    "standard_error": 0.000604246876337104,
+    "p_value": 1.3864034721213033e-28,
+    "significant": "True",
+    "method": "delta method, clustered on user"
+  },
+  "purchases per session (sessions as independent \u2014 WRONG)": {
+    "relative": 0.1431450633608755,
+    "rel_low": 0.12175847256234973,
+    "rel_high": 0.16493939457516005,
+    "absolute": 0.006701736337825011,
+    "standard_error": 0.00048220815457565867,
+    "p_value": 6.512213498229652e-44,
+    "significant": true,
+    "method": "binomial on sessions"
+  },
+  "users who converted": {
+    "relative": 0.10658793910176878,
+    "rel_low": 0.08368990643275165,
+    "rel_high": 0.12996980012149661,
+    "absolute": 0.022985298742509014,
+    "standard_error": 0.002418020721660141,
+    "p_value": 1.984551724774763e-21,
+    "significant": true,
+    "method": "two-proportion z"
+  },
+  "revenue per user": {
+    "relative": 0.15154654053852812,
+    "rel_low": 0.1141881767736801,
+    "rel_high": 0.190157517975178,
+    "absolute": 2.9104002928953854,
+    "standard_error": 0.34706211910350304,
+    "p_value": 5.0373571120714644e-17,
+    "significant": "True",
+    "method": "Welch"
+  },
+  "revenue per user (CUPED)": {
+    "relative": 0.15259762991611736,
+    "rel_low": 0.11679621356771541,
+    "rel_high": 0.1895467412485996,
+    "absolute": 2.9291529003038477,
+    "standard_error": 0.3318765793103086,
+    "p_value": 1.0845620179262573e-18,
+    "significant": "True",
+    "method": "CUPED (theta=0.2765)"
+  },
+  "sessions per user (negative control)": {
+    "relative": -0.003125055326860582,
+    "rel_low": -0.015193931223064894,
+    "rel_high": 0.00909172559350635,
+    "absolute": -0.02137573529274306,
+    "standard_error": 0.042442179194864996,
+    "p_value": 0.6145117924041333,
+    "significant": "False",
+    "method": "Welch"
+  },
+  "se_inflation_from_clustering": 1.2530830733645286,
+  "min_detectable_effect": {
+    "baseline": 0.04681779574144041,
+    "n_per_arm": 59899,
+    "power": 0.8,
+    "alpha": 0.05,
+    "design_effect": 2.7488225,
+    "absolute": 0.005834784977940996,
+    "relative": 0.12462750297268654
+  }
+}

@@ -1,0 +1,11 @@
+# A file path, not a warehouse account: the whole project runs on a laptop and in CI with no
+# credentials. Pointing `type` at bigquery or snowflake is the only change needed to run these same
+# models against a real warehouse.
+pae:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: "../data/warehouse.duckdb"
+      threads: 4
+      extensions: []

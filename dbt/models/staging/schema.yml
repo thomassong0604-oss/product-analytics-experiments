@@ -1,0 +1,52 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: raw
+    description: Landed event stream, written by scripts/seed.py from either a synthetic spec or a real public dataset.
+    tables:
+      - name: events
+      - name: users
+      - name: assignment
+      - name: ground_truth
+        description: >
+          The true treatment effect, present only for synthetic data. It is deliberately never
+          joined into a mart: the analysis must not be able to see the answer it is estimating.
+          Only the validation scripts read it.
+
+models:
+  - name: stg_events
+    description: Typed, de-duplicated event stream.
+    columns:
+      - name: event_id
+        description: Unique after de-duplication.
+        data_tests: [unique, not_null]
+      - name: user_id
+        data_tests: [not_null]
+      - name: event_name
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [session_start, product_view, add_to_cart, checkout_start, purchase]
+      - name: revenue
+        description: Non-zero only on purchase events.
+
+  - name: stg_users
+    columns:
+      - name: user_id
+        data_tests: [unique, not_null]
+
+  - name: stg_assignment
+    description: Experiment assignment, one row per user per experiment.
+    columns:
+      - name: user_id
+        data_tests: [not_null]
+      - name: variant
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [control, treatment]
+
+# The grain of stg_assignment (one row per user per experiment) is asserted by the singular test
+# dbt/tests/assert_one_assignment_per_user.sql rather than by dbt_utils, so the project needs no
+# package download and `dbt build` works with no network access.

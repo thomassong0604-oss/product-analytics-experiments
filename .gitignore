@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+*.egg-info/
+.DS_Store
+
+# The warehouse is built by scripts/seed.py + scripts/run_dbt.sh, not committed: it is ~100 MB and
+# fully reproducible from a seed.
+data/warehouse.duckdb
+data/dbt_target/
+data/dbt_logs/
+data/raw/
+dbt/target/
+dbt/logs/

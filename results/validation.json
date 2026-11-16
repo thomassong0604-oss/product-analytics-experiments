@@ -1,0 +1,290 @@
+{
+  "replications": 600,
+  "users": 6000,
+  "stated_lift": 0.15,
+  "false_positive_rate": [
+    {
+      "estimator": "naive_ratio",
+      "rate": 0.12166666666666667,
+      "low": 0.09788859753110658,
+      "high": 0.15025859868723948,
+      "holds": false
+    },
+    {
+      "estimator": "two_proportion",
+      "rate": 0.055,
+      "low": 0.039427897903584606,
+      "high": 0.07623422275852282,
+      "holds": true
+    },
+    {
+      "estimator": "welch_mean",
+      "rate": 0.04833333333333333,
+      "low": 0.03386067991337791,
+      "high": 0.06855293319310565,
+      "holds": true
+    },
+    {
+      "estimator": "cuped_revenue",
+      "rate": 0.043333333333333335,
+      "low": 0.029740793661155535,
+      "high": 0.06273643877861014,
+      "holds": true
+    },
+    {
+      "estimator": "delta_method_ratio",
+      "rate": 0.041666666666666664,
+      "low": 0.02837953071156377,
+      "high": 0.06078557483929593,
+      "holds": true
+    },
+    {
+      "estimator": "cuped_sessions",
+      "rate": 0.041666666666666664,
+      "low": 0.02837953071156377,
+      "high": 0.06078557483929593,
+      "holds": true
+    }
+  ],
+  "coverage": [
+    {
+      "estimator": "naive_ratio",
+      "rate": 0.8816666666666667,
+      "low": 0.853361127593803,
+      "high": 0.9051159299656631,
+      "holds": false
+    },
+    {
+      "estimator": "welch_mean",
+      "rate": 0.94,
+      "low": 0.9180526725654966,
+      "high": 0.9563488261056782,
+      "holds": true
+    },
+    {
+      "estimator": "cuped_revenue",
+      "rate": 0.94,
+      "low": 0.9180526725654966,
+      "high": 0.9563488261056782,
+      "holds": true
+    },
+    {
+      "estimator": "delta_method_ratio",
+      "rate": 0.9466666666666667,
+      "low": 0.9256788741411774,
+      "high": 0.9619711320856212,
+      "holds": true
+    },
+    {
+      "estimator": "cuped_sessions",
+      "rate": 0.9583333333333334,
+      "low": 0.9392144251607042,
+      "high": 0.9716204692884363,
+      "holds": true
+    }
+  ],
+  "honesty": [
+    {
+      "estimator": "naive_ratio",
+      "metric": "purchases per session",
+      "true_lift": 0.0,
+      "mean_estimate": 0.0012515377267652513,
+      "bias": 0.0012515377267652513,
+      "bias_low": -0.0032692807048277915,
+      "bias_high": 0.0057723561583582945,
+      "actual_spread": 0.0564984611080219,
+      "claimed_se": 0.044725244219346615,
+      "honesty_ratio": 0.7916188041623726,
+      "replications": 600,
+      "unbiased": true
+    },
+    {
+      "estimator": "delta_method_ratio",
+      "metric": "purchases per session",
+      "true_lift": 0.0,
+      "mean_estimate": 0.0012515377267652513,
+      "bias": 0.0012515377267652513,
+      "bias_low": -0.0032692807048277915,
+      "bias_high": 0.0057723561583582945,
+      "actual_spread": 0.0564984611080219,
+      "claimed_se": 0.05588860560696278,
+      "honesty_ratio": 0.9892058033245701,
+      "replications": 600,
+      "unbiased": true
+    },
+    {
+      "estimator": "two_proportion",
+      "metric": "users who converted",
+      "true_lift": 0.0,
+      "mean_estimate": -0.00041591835231753825,
+      "bias": -0.00041591835231753825,
+      "bias_low": -0.004259377205180444,
+      "bias_high": 0.003427540500545367,
+      "actual_spread": 0.04803322978008616,
+      "claimed_se": 0.049321272993718204,
+      "honesty_ratio": 1.0268156694756772,
+      "replications": 600,
+      "unbiased": true
+    },
+    {
+      "estimator": "welch_mean",
+      "metric": "revenue per user",
+      "true_lift": 0.0,
+      "mean_estimate": 0.002046819047757926,
+      "bias": 0.002046819047757926,
+      "bias_low": -0.004245729663250612,
+      "bias_high": 0.008339367758766463,
+      "actual_spread": 0.07864047716111695,
+      "claimed_se": 0.07836342453127876,
+      "honesty_ratio": 0.9964769716583666,
+      "replications": 600,
+      "unbiased": true
+    },
+    {
+      "estimator": "cuped_revenue",
+      "metric": "revenue per user",
+      "true_lift": 0.0,
+      "mean_estimate": 0.0027436455808393396,
+      "bias": 0.0027436455808393396,
+      "bias_low": -0.003298463282745994,
+      "bias_high": 0.008785754444424674,
+      "actual_spread": 0.07551063105169183,
+      "claimed_se": 0.07488265765652999,
+      "honesty_ratio": 0.9916836426021661,
+      "replications": 600,
+      "unbiased": true
+    },
+    {
+      "estimator": "cuped_sessions",
+      "metric": "sessions per user",
+      "true_lift": 0.0,
+      "mean_estimate": -0.00012833981518387826,
+      "bias": -0.00012833981518387826,
+      "bias_low": -0.0013397549079781242,
+      "bias_high": 0.0010830752776103678,
+      "actual_spread": 0.015139534918633865,
+      "claimed_se": 0.015263299515619184,
+      "honesty_ratio": 1.0081749272781813,
+      "replications": 600,
+      "unbiased": true
+    }
+  ],
+  "negative_controls": [
+    {
+      "estimator": "cuped_sessions",
+      "rate": 0.041666666666666664,
+      "holds": true
+    }
+  ],
+  "attenuation": [
+    {
+      "metric": "purchases per session",
+      "stated_lift_on_purchase_step": 0.15,
+      "observed_lift": 0.1507900062226393,
+      "observed_low": 0.14717232680916245,
+      "observed_high": 0.15440768563611615,
+      "share_of_stated_lift": 1.0052667081509288,
+      "true_lift_known": true,
+      "replications": 1200
+    },
+    {
+      "metric": "users who converted",
+      "stated_lift_on_purchase_step": 0.15,
+      "observed_lift": 0.10165859723848861,
+      "observed_low": 0.0975868981732759,
+      "observed_high": 0.10573029630370132,
+      "share_of_stated_lift": 0.6777239815899241,
+      "true_lift_known": false,
+      "replications": 600
+    },
+    {
+      "metric": "revenue per user",
+      "stated_lift_on_purchase_step": 0.15,
+      "observed_lift": 0.15202183647636494,
+      "observed_low": 0.14706620732193473,
+      "observed_high": 0.15697746563079515,
+      "share_of_stated_lift": 1.013478909842433,
+      "true_lift_known": true,
+      "replications": 1200
+    },
+    {
+      "metric": "sessions per user",
+      "stated_lift_on_purchase_step": 0.15,
+      "observed_lift": -0.00012833981518387826,
+      "observed_low": -0.0013397549079781242,
+      "observed_high": 0.0010830752776103678,
+      "share_of_stated_lift": -0.0008555987678925218,
+      "true_lift_known": true,
+      "replications": 600
+    }
+  ],
+  "peeking": {
+    "looks": 14,
+    "alpha": 0.05,
+    "iterations": 40000,
+    "naive_peeking": 0.222375,
+    "fixed_horizon": 0.050175,
+    "pocock": 0.05055,
+    "obrien_fleming": 0.048675
+  },
+  "boundaries": {
+    "pocock": [
+      2.6146,
+      2.6146,
+      2.6146,
+      2.6146,
+      2.6146,
+      2.6146,
+      2.6146,
+      2.6146,
+      2.6146,
+      2.6146,
+      2.6146,
+      2.6146,
+      2.6146,
+      2.6146
+    ],
+    "obrien_fleming": [
+      7.8856,
+      5.576,
+      4.5528,
+      3.9428,
+      3.5266,
+      3.2193,
+      2.9805,
+      2.788,
+      2.6285,
+      2.4937,
+      2.3776,
+      2.2764,
+      2.1871,
+      2.1075
+    ]
+  },
+  "power": [
+    {
+      "estimator": "naive_ratio",
+      "rate": 0.83
+    },
+    {
+      "estimator": "delta_method_ratio",
+      "rate": 0.7133333333333334
+    },
+    {
+      "estimator": "two_proportion",
+      "rate": 0.5333333333333333
+    },
+    {
+      "estimator": "cuped_revenue",
+      "rate": 0.49
+    },
+    {
+      "estimator": "welch_mean",
+      "rate": 0.45166666666666666
+    },
+    {
+      "estimator": "cuped_sessions",
+      "rate": 0.041666666666666664
+    }
+  ]
+}

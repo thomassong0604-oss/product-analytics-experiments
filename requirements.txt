@@ -1,0 +1,8 @@
+# Everything needed to build the warehouse, run the analysis and run the tests — offline.
+numpy>=1.26
+pandas>=2.1
+scipy>=1.11            # normal quantiles for power and sequential boundaries
+duckdb>=1.0            # the warehouse
+dbt-core>=1.8          # transformation and data tests
+dbt-duckdb>=1.8
+pytest>=8.0
